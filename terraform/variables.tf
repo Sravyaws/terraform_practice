@@ -19,3 +19,8 @@ variable "region" {
   default = "us-east-2"
 
 }
+variable "subname" {
+  type    = list(string)
+  default = ["web1", "app1", "db1"]
+
+}
