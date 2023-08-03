@@ -5,7 +5,7 @@ resource "aws_vpc" "ntier" {
     }
 }
 resource "aws_subnet" "ntiersub" {
-    vpc_id     = var.aws_vpc.id
+    vpc_id     = aws_vpc.ntier.id
     cidr_block = "192.168.0.0/24"
 
   tags = {
