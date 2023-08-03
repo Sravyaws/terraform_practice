@@ -26,5 +26,8 @@ resource "aws_route_table" "public" {
   route = {
     gateway_id = aws_internet_gateway.myigw.id
   }
+  tags = {
+    Name = "publicrt"
+  }
 }
 
