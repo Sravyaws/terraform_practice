@@ -10,6 +10,6 @@ resource "aws_subnet" "ntiersub" {
     cidr_block = var.subnetcidr[count.index]
     availability_zone = "${var.region}${var.availabilityzone[count.index]}"
     depends_on = [
-         aws_vpc.nteir
+         aws_vpc.ntier
     ]
 }
