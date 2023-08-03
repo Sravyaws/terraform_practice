@@ -4,7 +4,7 @@ resource "aws_vpc" "ntier" {
       Name = "ntier"
     }
 }
-resource "aws_vpc" "ntier" {
+resource "aws_vpc" "2tier" {
     cidr_block = "192.168.0.0/16"
     tags = {
       Name = "backend"
