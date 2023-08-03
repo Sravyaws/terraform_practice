@@ -5,7 +5,7 @@ resource "aws_vpc" "ntier" {
     }
 }
 resource "aws_subnet" "ntiersub" {
-    count = 3
+    count = length(var.subnetcidr)
     vpc_id     = aws_vpc.ntier.id
     cidr_block = var.subnetcidr[count.index]
     availability_zone = "${var.region}${var.availabilityzone[count.index]}"
