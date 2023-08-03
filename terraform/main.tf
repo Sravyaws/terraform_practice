@@ -1,19 +1,15 @@
-resource "aws_s3_bucket" "gs1234" {
-  bucket = "gsravs123"
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
-
+resource "aws_vpc" "ntier" {
+    cidr_block = var.CIDR  
+    tags = {
+      Name = "myvp"
+    }
 }
-
-resource "aws_s3_bucket" "gs123" {
-  bucket = "gsravs1"
+resource "aws_subnet" "ntiersub" {
+    vpc_id     = var.aws_vpc.id
+    cidr_block = "192.168.0.0/24"
 
   tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
+    Name = "web1"
   }
-
+  
 }
