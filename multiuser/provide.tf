@@ -11,3 +11,11 @@ terraform {
 provider "aws" {
   region = "us-east-2"
 }
+terraform {
+  backend "s3" {
+    bucket         = "gsravs"
+    key            = "classes/multiuser"
+    region         = "us-east-2"
+    dynamodb_table = "backend"
+  }
+}
