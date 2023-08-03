@@ -14,7 +14,7 @@ resource "aws_subnet" "ntiersub" {
   ]
   tags = {
 
-    Name = "var.subname[count.index]"
+    Name = element(var.subname, count.index)
   }
 }
 resource "aws_internet_gateway" "myigw" {
