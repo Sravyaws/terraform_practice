@@ -23,9 +23,11 @@ resource "aws_internet_gateway" "myigw" {
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.ntier.id
 
-  route = {
+  route {
     gateway_id = aws_internet_gateway.myigw.id
   }
+
+
   tags = {
     Name = "publicrt"
   }
