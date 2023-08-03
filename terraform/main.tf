@@ -7,3 +7,13 @@ resource "aws_s3_bucket" "gs1234" {
   }
 
 }
+
+resource "aws_s3_bucket" "gs123" {
+  bucket = "gsravs1"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+
+}
