@@ -13,3 +13,6 @@ resource "aws_subnet" "ntiersub" {
          aws_vpc.ntier
     ]
 }
+resource "aws_internet_gateway" "myigw" {
+    vpc_id = aws_vpc.ntier.id
+}
