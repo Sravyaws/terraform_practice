@@ -5,11 +5,11 @@ resource "aws_vpc" "ntier" {
     }
 }
 resource "aws_subnet" "ntiersub" {
+    count = 3
     vpc_id     = aws_vpc.ntier.id
-    cidr_block = "192.168.0.0/24"
-
-  tags = {
-    Name = "web1"
-  }
+    cidr_block = var.subnetcidr[count.index]
+    availability_zone = ${var.region}${var.availabilityzone[count.index]}
+    depends_on = {
+        aws_vpc.nteir
   
 }
