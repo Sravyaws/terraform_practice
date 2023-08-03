@@ -8,8 +8,8 @@ resource "aws_subnet" "ntiersub" {
     count = 3
     vpc_id     = aws_vpc.ntier.id
     cidr_block = var.subnetcidr[count.index]
-    availability_zone = ${var.region}${var.availabilityzone[count.index]}
-    depends_on = {
-        aws_vpc.nteir
-  
+    availability_zone = "${var.region}${var.availabilityzone[count.index]}"
+    depends_on = [
+         aws_vpc.nteir
+    ]
 }
